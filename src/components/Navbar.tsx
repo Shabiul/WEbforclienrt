@@ -191,9 +191,8 @@ export default function Navbar() {
                   <div style={{ paddingLeft: '16px', borderLeft: '2px solid #e2e8f0', marginBottom: '4px' }}>
                     {link.children.map((child) => (
                       <Link key={child.href} href={child.href} style={{
-                        display: 'block', padding: '11px 8px', fontSize: '15px',
+                        display: 'flex', alignItems: 'center', padding: '11px 8px', fontSize: '15px',
                         color: '#64748b', textDecoration: 'none', minHeight: '44px',
-                        display: 'flex', alignItems: 'center',
                       } as React.CSSProperties}>
                         {child.name}
                       </Link>
