@@ -26,17 +26,18 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section style={{
+      <section className="hero-section" style={{
         background: 'linear-gradient(135deg, #0c2d72 0%, #1a56db 60%, #2968e8 100%)',
         color: 'white', padding: '88px 24px 80px', position: 'relative', overflow: 'hidden',
       }}>
         <div style={{
-          position: 'absolute', inset: 0, opacity: 0.06,
+          position: 'absolute', inset: 0, opacity: 0.05,
           backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
+          backgroundSize: '40px 40px',
+          pointerEvents: 'none',
         }} />
         <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
-          <div style={{
+          <div className="hero-badge" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)',
             borderRadius: '100px', padding: '6px 16px', fontSize: '13px',
@@ -46,20 +47,21 @@ export default function HomePage() {
             Addis Ababa &nbsp;·&nbsp; London &nbsp;·&nbsp; Bangalore
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.6rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '24px' }}>
             Empowering Ethiopia&apos;s<br />
             <span style={{ color: '#d4a017' }}>Digital Future</span>
           </h1>
 
-          <p style={{ fontSize: '1.125rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.82)', maxWidth: '600px', margin: '0 auto 36px' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.82)', maxWidth: '600px', margin: '0 auto 36px' }}>
             Impact Technology PLC is a leading IT solutions provider enabling organizations across Ethiopia to accelerate their digital transformation through world-class technology and trusted advisory services.
           </p>
 
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="hero-cta-row" style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/solutions" style={{
               background: 'white', color: '#1a56db', padding: '14px 28px',
               borderRadius: '9px', fontSize: '15px', fontWeight: 700,
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px',
+              minHeight: '50px',
             }}>
               Explore Solutions <ArrowRight size={16} />
             </Link>
@@ -68,6 +70,7 @@ export default function HomePage() {
               border: '1.5px solid rgba(255,255,255,0.35)',
               padding: '14px 28px', borderRadius: '9px', fontSize: '15px',
               fontWeight: 600, textDecoration: 'none',
+              minHeight: '50px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             }}>
               Contact Us
             </Link>
@@ -85,7 +88,7 @@ export default function HomePage() {
       <StatsSection />
 
       {/* ── SERVICES ── */}
-      <section style={{ background: '#f7f9fc', padding: '80px 24px' }}>
+      <section className="section-pad-lg" style={{ background: '#f7f9fc', padding: '80px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <AnimatedSection>
             <div style={{ textAlign: 'center', marginBottom: '52px' }}>
@@ -99,7 +102,7 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {services.map((svc, i) => (
               <AnimatedSection key={svc.href} delay={i * 0.07}>
                 <Link href={svc.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
@@ -124,8 +127,8 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section style={{ background: 'white', padding: '80px 24px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '56px', alignItems: 'center' }}>
+      <section className="section-pad-lg" style={{ background: 'white', padding: '80px 24px' }}>
+        <div className="why-us-grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <AnimatedSection direction="left">
             <p style={{ color: '#1a56db', fontWeight: 700, fontSize: '13px', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>Why Impact Technology</p>
             <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, letterSpacing: '-0.025em', color: '#0f172a', marginBottom: '18px', lineHeight: 1.2 }}>
@@ -138,12 +141,13 @@ export default function HomePage() {
               display: 'inline-flex', alignItems: 'center', gap: '6px',
               background: '#1a56db', color: 'white', padding: '12px 24px',
               borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none',
+              minHeight: '44px',
             }}>
               Learn About Us <ArrowRight size={15} />
             </Link>
           </AnimatedSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             {whyUs.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.1}>
                 <div style={{
@@ -161,7 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PARTNERS ── */}
-      <section style={{ background: '#f7f9fc', padding: '72px 24px' }}>
+      <section className="section-pad-lg" style={{ background: '#f7f9fc', padding: '72px 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <AnimatedSection>
             <div style={{ textAlign: 'center', marginBottom: '44px' }}>
@@ -173,12 +177,13 @@ export default function HomePage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginBottom: '24px' }}>
               {infraPartners.map((p) => (
                 <div key={p} className="hover-partner" style={{
                   background: 'white', border: '1px solid #e2e8f0',
-                  borderRadius: '10px', padding: '14px 24px',
+                  borderRadius: '10px', padding: '12px 20px',
                   fontSize: '14px', fontWeight: 600, color: '#334155',
+                  minHeight: '44px', display: 'flex', alignItems: 'center',
                 }}>
                   {p}
                 </div>
@@ -190,12 +195,13 @@ export default function HomePage() {
             <p style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '14px' }}>
               Cloud &amp; Software
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
               {cloudPartners.map((p) => (
                 <div key={p} style={{
                   background: 'white', border: '1.5px dashed #c7d9f8',
-                  borderRadius: '10px', padding: '13px 22px',
+                  borderRadius: '10px', padding: '12px 20px',
                   fontSize: '14px', fontWeight: 600, color: '#1a56db',
+                  minHeight: '44px', display: 'flex', alignItems: 'center',
                 }}>
                   {p}
                 </div>
@@ -205,7 +211,7 @@ export default function HomePage() {
 
           <AnimatedSection delay={0.2}>
             <div style={{ textAlign: 'center', marginTop: '32px' }}>
-              <Link href="/partners" style={{ fontSize: '14px', fontWeight: 600, color: '#1a56db', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+              <Link href="/partners" style={{ fontSize: '14px', fontWeight: 600, color: '#1a56db', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px', minHeight: '44px' }}>
                 View All Partner Details <ChevronRight size={14} />
               </Link>
             </div>
@@ -214,8 +220,8 @@ export default function HomePage() {
       </section>
 
       {/* ── MISSION & VISION ── */}
-      <section style={{ background: 'white', padding: '72px 24px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
+      <section className="section-pad-lg" style={{ background: 'white', padding: '72px 24px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
           <AnimatedSection direction="left">
             <div style={{ background: '#1a56db', color: 'white', borderRadius: '16px', padding: '36px', height: '100%' }}>
               <div style={{ fontSize: '32px', marginBottom: '14px' }}>🎯</div>
@@ -249,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <section style={{ background: 'linear-gradient(90deg, #0c2d72 0%, #1a56db 100%)', padding: '68px 24px', color: 'white', textAlign: 'center' }}>
+      <section className="section-pad-lg" style={{ background: 'linear-gradient(90deg, #0c2d72 0%, #1a56db 100%)', padding: '68px 24px', color: 'white', textAlign: 'center' }}>
         <AnimatedSection>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 800, letterSpacing: '-0.025em', marginBottom: '16px' }}>
             Ready to Transform Your Business?
@@ -257,11 +263,11 @@ export default function HomePage() {
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', marginBottom: '32px', maxWidth: '520px', margin: '0 auto 32px', lineHeight: 1.7 }}>
             Let&apos;s discuss how Impact Technology can accelerate your organization&apos;s digital transformation journey.
           </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{ background: 'white', color: '#1a56db', padding: '14px 30px', borderRadius: '9px', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          <div className="hero-cta-row" style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" style={{ background: 'white', color: '#1a56db', padding: '14px 30px', borderRadius: '9px', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', minHeight: '50px' }}>
               Get in Touch <ArrowRight size={16} />
             </Link>
-            <Link href="/success-stories" style={{ background: 'rgba(255,255,255,0.12)', color: 'white', border: '1.5px solid rgba(255,255,255,0.3)', padding: '14px 30px', borderRadius: '9px', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+            <Link href="/success-stories" style={{ background: 'rgba(255,255,255,0.12)', color: 'white', border: '1.5px solid rgba(255,255,255,0.3)', padding: '14px 30px', borderRadius: '9px', fontSize: '15px', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minHeight: '50px' }}>
               See Our Work
             </Link>
           </div>

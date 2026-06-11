@@ -44,8 +44,9 @@ export default function StatsSection() {
         gap: '0',
       }}>
         {stats.map((stat, i) => (
-          <div key={stat.label} style={{
+          <div key={stat.label} className="stat-item" style={{
             textAlign: 'center', padding: '24px 16px',
+            /* Desktop: right border except last item. Mobile class overrides this. */
             borderRight: i < stats.length - 1 ? '1px solid #e2e8f0' : 'none',
           }}>
             <div style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 800, color: '#1a56db', letterSpacing: '-0.04em', lineHeight: 1 }}>

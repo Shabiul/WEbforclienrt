@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -10,6 +10,16 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#1a56db' },
+    { media: '(prefers-color-scheme: dark)', color: '#0c2d72' },
+  ],
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://webforclientart69.vercel.app'),
@@ -23,6 +33,17 @@ export const metadata: Metadata = {
   creator: 'Impact Technology PLC',
   publisher: 'Impact Technology PLC',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Impact Tech',
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_ET',
@@ -48,15 +69,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <OrganizationSchema />
         <WebSiteSchema />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon.svg" />
         <meta name="geo.region" content="ET" />
         <meta name="geo.placename" content="Addis Ababa" />
         <meta name="geo.position" content="9.0248;38.7469" />
         <meta name="ICBM" content="9.0248, 38.7469" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to content</a>
         <Navbar />
-        <main id="main-content" style={{ paddingTop: '92px' }}>{children}</main>
+        <main id="main-content" className="main-content">{children}</main>
         <Footer />
       </body>
     </html>
