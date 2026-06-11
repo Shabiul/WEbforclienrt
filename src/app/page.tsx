@@ -38,10 +38,11 @@ const services = [
   { icon: Shield, title: 'Cybersecurity', desc: 'Comprehensive security frameworks protecting your assets, data, and reputation.', href: '/solutions/cybersecurity' },
   { icon: Monitor, title: 'End User Computing', desc: 'Modern workstations, laptops, and managed device solutions for a productive workforce.', href: '/solutions/end-user-computing' },
   { icon: Settings, title: 'Managed Services', desc: 'Proactive IT management, monitoring, and support so you can focus on your core business.', href: '/solutions/managed-services' },
+  { icon: Shield, title: 'Banking & Security Equipment', desc: 'Authorized distributor of currency counters, banknote sorters, safes, and vault solutions from Korea, China, and Europe.', href: '/partners' },
 ]
 
 const whyUs = [
-  { title: 'A Decade of Excellence', desc: 'Over ten years serving Ethiopia\'s leading enterprises, government institutions, and financial organizations — earning a reputation for reliability and technical excellence.' },
+  { title: 'Two Decades of Excellence', desc: 'Over 20 years since 2004 serving Ethiopia\'s leading enterprises, government institutions, and financial organizations — earning a reputation for reliability and technical excellence.' },
   { title: 'Customer-First Philosophy', desc: 'We work closely with each client to understand their unique challenges and deliver solutions that align with their strategic objectives.' },
   { title: 'Strategic Technology Partnerships', desc: 'Strong alliances with globally recognized technology leaders enable us to provide cutting-edge products backed by industry-leading support.' },
   { title: 'End-to-End Expertise', desc: 'From computing infrastructure and networking to cloud, security, and managed services — we cover the full technology spectrum.' },

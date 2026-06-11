@@ -3,7 +3,10 @@ import Link from 'next/link'
 import { MapPin, Users, Award, Target, Globe, ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
-export const metadata: Metadata = { title: 'About Us' }
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: "Impact Technology PLC — established in 2004 in Addis Ababa, Ethiopia. Over 20 years of delivering IT solutions, banking machines, and enterprise technology.",
+}
 
 const values = [
   { icon: Award, title: 'Excellence', desc: 'We hold ourselves to the highest standards in every engagement, delivering quality that our clients can rely on.' },
@@ -13,7 +16,7 @@ const values = [
 ]
 
 const offices = [
-  { city: 'Addis Ababa', country: 'Ethiopia', role: 'Headquarters', detail: 'Primary operations, sales, and technical delivery hub' },
+  { city: 'Addis Ababa', country: 'Ethiopia', role: 'Headquarters', detail: 'Primary operations, sales, banking equipment, and technical delivery hub — established 2004' },
   { city: 'London', country: 'United Kingdom', role: 'International Office', detail: 'European partnerships and procurement operations' },
   { city: 'Bangalore', country: 'India', role: 'Technical Centre', detail: 'Technical support, managed services, and engineering' },
 ]
@@ -22,7 +25,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{
+      <section className="hero-section" style={{
         background: 'linear-gradient(135deg, #0c2d72 0%, #1a56db 100%)',
         color: 'white', padding: '72px 24px 64px', textAlign: 'center',
       }}>
@@ -32,32 +35,35 @@ export default function AboutPage() {
         <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '18px' }}>
           About Impact Technology PLC
         </h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.75 }}>
-          Over a decade of enabling Ethiopia&apos;s digital transformation through world-class technology solutions and trusted partnerships.
+        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.75 }}>
+          Established in 2004, Impact Technology PLC has spent over two decades building Ethiopia&apos;s digital and financial infrastructure — supplying enterprise IT, banking machines, and security equipment to organizations across the country.
         </p>
       </section>
 
       {/* Our Story */}
-      <section style={{ background: 'white', padding: '72px 24px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '60px', alignItems: 'center' }}>
+      <section className="section-pad-lg" style={{ background: 'white', padding: '72px 24px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '60px', alignItems: 'center' }}>
           <AnimatedSection direction="left">
             <p style={{ color: '#1a56db', fontWeight: 700, fontSize: '13px', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>
               Our Story
             </p>
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: '#0f172a', marginBottom: '20px', letterSpacing: '-0.025em', lineHeight: 1.2 }}>
-              A Decade of Building Ethiopia&apos;s Digital Infrastructure
+              Two Decades of Building Ethiopia&apos;s Technology Infrastructure
             </h2>
             <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.8, marginBottom: '16px' }}>
-              Impact Technology PLC was founded with a clear purpose: to bridge the technology gap and help Ethiopian organizations compete in an increasingly digital world. Headquartered in Addis Ababa with international offices in London and Bangalore, we have grown from a regional IT provider into a trusted enterprise technology partner.
+              Founded in 2004 in Addis Ababa, Impact Technology PLC set out with a clear purpose: to bridge the technology gap and equip Ethiopian organizations to compete in a digital world. From our early focus on banking machines and security equipment, we grew into a full-spectrum enterprise technology provider serving the country&apos;s most demanding sectors.
+            </p>
+            <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.8, marginBottom: '16px' }}>
+              Over 20 years, we have supplied more than <strong style={{ color: '#0f172a' }}>27,000 banking machines</strong> and <strong style={{ color: '#0f172a' }}>75,000+ computers and laptops</strong> to the Ethiopian market — partnering with globally recognized brands from Korea, China, Spain, and beyond to bring world-class equipment to local enterprises.
             </p>
             <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.8, marginBottom: '24px' }}>
-              We serve a diverse portfolio of clients — financial institutions, government agencies, educational establishments, healthcare organizations, and private enterprises — delivering solutions that create real, measurable business impact.
+              Today, headquartered in Addis Ababa with international offices in London and Bangalore, we serve financial institutions, government agencies, healthcare organizations, educational establishments, and private enterprises — delivering end-to-end IT solutions that create measurable business impact.
             </p>
             <Link href="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: '6px',
               background: '#1a56db', color: 'white', padding: '12px 22px',
               borderRadius: '8px', fontSize: '14px', fontWeight: 600,
-              textDecoration: 'none',
+              textDecoration: 'none', minHeight: '44px',
             }}>
               Work With Us <ArrowRight size={15} />
             </Link>
@@ -66,19 +72,19 @@ export default function AboutPage() {
           <AnimatedSection direction="right">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               {[
-                { num: '10+', label: 'Years of Experience' },
-                { num: '100+', label: 'Enterprise Deployments' },
+                { num: '2004', label: 'Year Established' },
+                { num: '27,000+', label: 'Banking Machines Supplied' },
+                { num: '75,000+', label: 'Computers Deployed' },
                 { num: '3', label: 'Global Offices' },
-                { num: '6+', label: 'Technology Partners' },
               ].map((s) => (
                 <div key={s.label} style={{
                   background: '#f7f9fc', border: '1px solid #e2e8f0',
-                  borderRadius: '14px', padding: '28px 20px', textAlign: 'center',
+                  borderRadius: '14px', padding: '24px 18px', textAlign: 'center',
                 }}>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#1a56db', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1a56db', letterSpacing: '-0.03em', lineHeight: 1 }}>
                     {s.num}
                   </div>
-                  <div style={{ fontSize: '13px', color: '#64748b', marginTop: '8px', fontWeight: 500 }}>
+                  <div style={{ fontSize: '12.5px', color: '#64748b', marginTop: '8px', fontWeight: 500, lineHeight: 1.4 }}>
                     {s.label}
                   </div>
                 </div>
@@ -89,7 +95,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section style={{ background: '#f7f9fc', padding: '72px 24px' }}>
+      <section className="section-pad-lg" style={{ background: '#f7f9fc', padding: '72px 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <AnimatedSection>
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -125,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Global Presence */}
-      <section style={{ background: 'white', padding: '72px 24px' }}>
+      <section className="section-pad-lg" style={{ background: 'white', padding: '72px 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <AnimatedSection>
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>

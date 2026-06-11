@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
 const stats = [
-  { value: 10, suffix: '+', label: 'Years of Experience', sub: 'Serving Ethiopian enterprises' },
-  { value: 100, suffix: '+', label: 'Enterprise Deployments', sub: 'Across Ethiopia' },
+  { value: 20, suffix: '+', label: 'Years of Experience', sub: 'Established 2004 in Addis Ababa' },
+  { value: 27000, suffix: '+', label: 'Banking Machines Supplied', sub: 'To the Ethiopia market' },
+  { value: 75000, suffix: '+', label: 'Computers Deployed', sub: 'Desktops & laptops nationwide' },
   { value: 3, suffix: '', label: 'Global Offices', sub: 'Addis Ababa · London · Bangalore' },
-  { value: 6, suffix: '+', label: 'Technology Partners', sub: 'World-class alliances' },
 ]
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -16,7 +16,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
   useEffect(() => {
     if (!inView) return
-    const duration = 1400
+    const duration = 1600
     const start = Date.now()
     const tick = () => {
       const elapsed = Date.now() - start
@@ -28,9 +28,12 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
     requestAnimationFrame(tick)
   }, [inView, value])
 
+  /* Format large numbers with commas */
+  const formatted = count >= 1000 ? count.toLocaleString() : count
+
   return (
     <span ref={ref}>
-      {count}{suffix}
+      {formatted}{suffix}
     </span>
   )
 }
@@ -46,16 +49,15 @@ export default function StatsSection() {
         {stats.map((stat, i) => (
           <div key={stat.label} className="stat-item" style={{
             textAlign: 'center', padding: '24px 16px',
-            /* Desktop: right border except last item. Mobile class overrides this. */
             borderRight: i < stats.length - 1 ? '1px solid #e2e8f0' : 'none',
           }}>
-            <div style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 800, color: '#1a56db', letterSpacing: '-0.04em', lineHeight: 1 }}>
+            <div style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: 800, color: '#1a56db', letterSpacing: '-0.04em', lineHeight: 1 }}>
               <Counter value={stat.value} suffix={stat.suffix} />
             </div>
-            <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', margin: '8px 0 4px' }}>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', margin: '8px 0 4px' }}>
               {stat.label}
             </div>
-            <div style={{ fontSize: '12.5px', color: '#94a3b8' }}>
+            <div style={{ fontSize: '12px', color: '#94a3b8' }}>
               {stat.sub}
             </div>
           </div>

@@ -1,11 +1,12 @@
 {
-  "name": "impact-technology",
+  "name": "webforclientart69",
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "git": {
     "deploymentEnabled": {
+      "main": true,
       "claude/kind-bardeen-bguq32": true
     }
   }
