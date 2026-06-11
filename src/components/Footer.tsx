@@ -25,10 +25,10 @@ export default function Footer() {
     <footer style={{ background: '#0f172a', color: '#94a3b8' }}>
       <div style={{
         maxWidth: '1280px', margin: '0 auto',
-        padding: '64px 24px 32px',
-        /* Side safe areas for landscape iPhone */
-        paddingLeft: 'max(24px, calc(24px + env(safe-area-inset-left, 0px)))',
-        paddingRight: 'max(24px, calc(24px + env(safe-area-inset-right, 0px)))',
+        paddingTop: '64px',
+        paddingBottom: '32px',
+        paddingLeft: 'calc(24px + env(safe-area-inset-left, 0px))',
+        paddingRight: 'calc(24px + env(safe-area-inset-right, 0px))',
       }}>
         <div className="footer-grid" style={{ marginBottom: '48px' }}>
 

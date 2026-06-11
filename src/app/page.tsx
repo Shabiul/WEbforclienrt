@@ -1,7 +1,35 @@
 import Link from 'next/link'
-import { Server, Database, Network, Shield, Monitor, Settings, ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react'
+import { Server, Database, Network, Shield, Monitor, Settings, ArrowRight, CheckCircle2, Calendar, Tag, ChevronRight } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import StatsSection from '@/components/StatsSection'
+import PartnersMarquee from '@/components/PartnersMarquee'
+
+/* Update this URL when your WordPress blog is live */
+const BLOG_URL = 'https://blog.impacttechnology.et'
+
+const blogPosts = [
+  {
+    category: 'Digital Transformation',
+    title: 'How Ethiopian Enterprises Are Accelerating Cloud Adoption in 2024',
+    excerpt: 'Across banking, government, and education, Ethiopian organizations are moving workloads to hybrid cloud environments. We explore the key drivers and best practices.',
+    date: 'June 5, 2024',
+    slug: '/cloud-adoption-ethiopia-2024',
+  },
+  {
+    category: 'Cybersecurity',
+    title: 'Cybersecurity Essentials for East African Financial Institutions',
+    excerpt: 'Financial institutions face unique threat landscapes. This post outlines the security frameworks, compliance requirements, and practical defenses every CISO should have in place.',
+    date: 'May 22, 2024',
+    slug: '/cybersecurity-financial-institutions',
+  },
+  {
+    category: 'Infrastructure',
+    title: 'Data Center Best Practices: Lessons from a Decade of Deployments',
+    excerpt: 'After delivering more than 100 enterprise data center projects across Ethiopia, our engineers share the planning, design, and operational insights that make deployments succeed.',
+    date: 'May 10, 2024',
+    slug: '/data-center-best-practices',
+  },
+]
 
 const services = [
   { icon: Server, title: 'Computing Infrastructure', desc: 'Enterprise-grade servers, storage, and compute platforms engineered for reliability and scale.', href: '/solutions/computing-infrastructure' },
@@ -19,8 +47,6 @@ const whyUs = [
   { title: 'End-to-End Expertise', desc: 'From computing infrastructure and networking to cloud, security, and managed services — we cover the full technology spectrum.' },
 ]
 
-const infraPartners = ['Dell Technologies', 'NVIDIA', 'Apple', 'HP', 'Microsoft', 'Cisco']
-const cloudPartners = ['Amazon Web Services', 'Microsoft Azure', 'Google Cloud']
 
 export default function HomePage() {
   return (
@@ -164,60 +190,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PARTNERS ── */}
-      <section className="section-pad-lg" style={{ background: '#f7f9fc', padding: '72px 24px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <AnimatedSection>
-            <div style={{ textAlign: 'center', marginBottom: '44px' }}>
-              <p style={{ color: '#64748b', fontSize: '14px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Technology Partners</p>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#0f172a' }}>
-                Backed by Global Technology Leaders
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.1}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginBottom: '24px' }}>
-              {infraPartners.map((p) => (
-                <div key={p} className="hover-partner" style={{
-                  background: 'white', border: '1px solid #e2e8f0',
-                  borderRadius: '10px', padding: '12px 20px',
-                  fontSize: '14px', fontWeight: 600, color: '#334155',
-                  minHeight: '44px', display: 'flex', alignItems: 'center',
-                }}>
-                  {p}
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.15}>
-            <p style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '14px' }}>
-              Cloud &amp; Software
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
-              {cloudPartners.map((p) => (
-                <div key={p} style={{
-                  background: 'white', border: '1.5px dashed #c7d9f8',
-                  borderRadius: '10px', padding: '12px 20px',
-                  fontSize: '14px', fontWeight: 600, color: '#1a56db',
-                  minHeight: '44px', display: 'flex', alignItems: 'center',
-                }}>
-                  {p}
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.2}>
-            <div style={{ textAlign: 'center', marginTop: '32px' }}>
-              <Link href="/partners" style={{ fontSize: '14px', fontWeight: 600, color: '#1a56db', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px', minHeight: '44px' }}>
-                View All Partner Details <ChevronRight size={14} />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* ── PARTNERS MARQUEE ── */}
+      <PartnersMarquee />
 
       {/* ── MISSION & VISION ── */}
       <section className="section-pad-lg" style={{ background: 'white', padding: '72px 24px' }}>
@@ -251,6 +225,75 @@ export default function HomePage() {
               </p>
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── BLOG PREVIEW ── */}
+      <section className="section-pad-lg" style={{ background: '#f7f9fc', padding: '80px 24px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <AnimatedSection>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
+              <div>
+                <p style={{ color: '#1a56db', fontWeight: 700, fontSize: '13px', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '10px' }}>
+                  Insights &amp; Updates
+                </p>
+                <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.025em' }}>
+                  Latest from Our Blog
+                </h2>
+              </div>
+              <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" style={{
+                fontSize: '14px', fontWeight: 600, color: '#1a56db', textDecoration: 'none',
+                display: 'inline-flex', alignItems: 'center', gap: '5px', minHeight: '44px',
+                flexShrink: 0,
+              }}>
+                View All Posts →
+              </a>
+            </div>
+          </AnimatedSection>
+
+          <div className="blog-grid">
+            {blogPosts.map((post, i) => (
+              <AnimatedSection key={post.slug} delay={i * 0.1}>
+                <a href={`${BLOG_URL}${post.slug}`} target="_blank" rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <div className="hover-card" style={{
+                    background: 'white', borderRadius: '16px', padding: '28px',
+                    border: '1px solid #e2e8f0', height: '100%',
+                    display: 'flex', flexDirection: 'column', gap: '14px',
+                  }}>
+                    {/* Category + Date */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                      <span style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '5px',
+                        background: '#eff6ff', color: '#1a56db',
+                        borderRadius: '100px', padding: '4px 12px',
+                        fontSize: '12px', fontWeight: 700,
+                      }}>
+                        <Tag size={10} />
+                        {post.category}
+                      </span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', color: '#94a3b8' }}>
+                        <Calendar size={12} />
+                        {post.date}
+                      </span>
+                    </div>
+                    {/* Title */}
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.45, margin: 0 }}>
+                      {post.title}
+                    </h3>
+                    {/* Excerpt */}
+                    <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.7, margin: 0, flex: 1 }}>
+                      {post.excerpt}
+                    </p>
+                    {/* Read more */}
+                    <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#1a56db', marginTop: 'auto' }}>
+                      Read Article →
+                    </span>
+                  </div>
+                </a>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 

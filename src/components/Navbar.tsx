@@ -69,9 +69,6 @@ export default function Navbar() {
         <div style={{
           maxWidth: '1280px', margin: '0 auto',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          /* Side safe areas */
-          paddingLeft: 'env(safe-area-inset-left, 0px)',
-          paddingRight: 'env(safe-area-inset-right, 0px)',
         }}>
           <span>Headquarters: Addis Ababa, Ethiopia</span>
           <span className="sm-visible" style={{ display: 'none' }}>London, UK &nbsp;|&nbsp; Bangalore, India</span>
@@ -79,9 +76,9 @@ export default function Navbar() {
       </div>
 
       <div style={{
-        maxWidth: '1280px', margin: '0 auto', padding: '0 24px',
-        paddingLeft: 'max(24px, env(safe-area-inset-left, 24px))',
-        paddingRight: 'max(24px, env(safe-area-inset-right, 24px))',
+        maxWidth: '1280px', margin: '0 auto',
+        paddingLeft: 'calc(24px + env(safe-area-inset-left, 0px))',
+        paddingRight: 'calc(24px + env(safe-area-inset-right, 0px))',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
           <Logo />
