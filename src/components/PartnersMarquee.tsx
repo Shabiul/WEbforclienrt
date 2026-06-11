@@ -92,6 +92,39 @@ const partners = [
     ),
   },
   {
+    name: 'E-banking',
+    color: '#0c2d72',
+    logo: (
+      <svg viewBox="0 0 80 24" height="20" fill="none" aria-label="E-banking">
+        <rect x="0" y="2" width="22" height="20" rx="3" fill="#0c2d72"/>
+        <text x="3" y="17" fontFamily="Arial,sans-serif" fontWeight="900" fontSize="13" fill="white">EB</text>
+        <text x="26" y="17" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="12" fill="#0c2d72">E-banking</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Kisan',
+    color: '#c0392b',
+    logo: (
+      <svg viewBox="0 0 70 24" height="20" fill="none" aria-label="Kisan">
+        <rect x="0" y="2" width="22" height="20" rx="3" fill="#c0392b"/>
+        <text x="3" y="17" fontFamily="Arial,sans-serif" fontWeight="900" fontSize="13" fill="white">KS</text>
+        <text x="26" y="17" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="13" fill="#c0392b">Kisan</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Cash Safe',
+    color: '#16a34a',
+    logo: (
+      <svg viewBox="0 0 90 24" height="20" fill="none" aria-label="Cash Safe">
+        <rect x="0" y="2" width="22" height="20" rx="3" fill="#16a34a"/>
+        <text x="3" y="17" fontFamily="Arial,sans-serif" fontWeight="900" fontSize="13" fill="white">CS</text>
+        <text x="26" y="17" fontFamily="Arial,sans-serif" fontWeight="700" fontSize="12" fill="#16a34a">Cash Safe</text>
+      </svg>
+    ),
+  },
+  {
     name: 'Google Cloud',
     color: '#4285F4',
     logo: (

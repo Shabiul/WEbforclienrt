@@ -9,8 +9,8 @@ export function OrganizationSchema() {
     alternateName: 'Impact Technology',
     url: BASE,
     logo: `${BASE}/logo.png`,
-    description: "Ethiopia's leading IT solutions provider — enterprise computing, data center, networking, cybersecurity, and managed services for over a decade.",
-    foundingDate: '2013',
+    description: "Ethiopia's leading IT solutions provider since 2004 — enterprise computing, banking machines, security equipment, networking, cybersecurity, and managed services.",
+    foundingDate: '2004',
     numberOfEmployees: { '@type': 'QuantitativeValue', value: 100 },
     slogan: "Empowering Ethiopia's Digital Future",
     address: [
