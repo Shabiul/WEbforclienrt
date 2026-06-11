@@ -31,7 +31,16 @@ export default function EndUserComputingPage() {
         { title: 'Device Lifecycle Management', desc: 'Structured processes for device provisioning, reassignment, and secure disposal aligned to data protection requirements.' },
         { title: 'Tech Refresh Planning', desc: 'Strategic device refresh roadmaps helping organizations upgrade technology on schedule within budget constraints.' },
       ]}
-      technologies={['Apple Business Manager', 'Microsoft Intune', 'Jamf Pro', 'HP Device as a Service', 'Dell Unified Workspace', 'VMware Workspace ONE', 'Microsoft 365', 'Cisco Webex Devices']}
+      technologies={[
+        { src: '/end-user-computing/Apple_logo_black.svg.png', alt: 'Apple Business Manager' },
+        { src: '/end-user-computing/Microsoft-intune.svg.png', alt: 'Microsoft Intune' },
+        { src: '/end-user-computing/JAMF_BIG.svg', alt: 'Jamf Pro' },
+        { src: '/end-user-computing/Hewlett-Packard_logo_1979_color.svg.png', alt: 'HP Device as a Service' },
+        { src: '/end-user-computing/Dell_Logo.svg.png', alt: 'Dell Unified Workspace' },
+        { src: '/end-user-computing/workspace-one-144.svg', alt: 'VMware Workspace ONE' },
+        { src: '/end-user-computing/Microsoft_365_(2022).svg.png', alt: 'Microsoft 365' },
+        { src: '/end-user-computing/Cisco_Webex_logo_-_Brandlogos.net.svg.png', alt: 'Cisco Webex Devices' },
+      ]}
       faq={[
         { q: 'Is Impact Technology an authorized Apple reseller in Ethiopia?', a: 'Yes. We are an authorized Apple reseller for business and enterprise, providing genuine Apple products with manufacturer warranty and access to Apple Business Manager for enterprise device management.' },
         { q: 'Can you manage devices for employees working from multiple locations?', a: 'Yes. With cloud-based MDM solutions like Microsoft Intune and Jamf, we can manage, secure, and support devices regardless of where employees are located — whether in Addis Ababa, regional offices, or working remotely.' },

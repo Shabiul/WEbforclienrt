@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Server, Database, Network, Shield, Monitor, Settings, ArrowRight, CheckCircle2, Calendar, Tag, ChevronRight } from 'lucide-react'
+import { Server, Database, Network, Shield, Monitor, Settings, ArrowRight, CheckCircle2, Calendar, Tag, ChevronRight, Target, Telescope, Handshake } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import StatsSection from '@/components/StatsSection'
 import PartnersMarquee from '@/components/PartnersMarquee'
@@ -198,7 +198,9 @@ export default function HomePage() {
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
           <AnimatedSection direction="left">
             <div style={{ background: '#1a56db', color: 'white', borderRadius: '16px', padding: '36px', height: '100%' }}>
-              <div style={{ fontSize: '32px', marginBottom: '14px' }}>🎯</div>
+              <div style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.15)', borderRadius: '12px', marginBottom: '18px' }}>
+                <Target size={24} />
+              </div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '14px', letterSpacing: '-0.02em' }}>Our Mission</h3>
               <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.85)' }}>
                 To empower organizations through innovative technology solutions that drive growth, efficiency, and sustainable digital transformation across Ethiopia and beyond.
@@ -208,7 +210,9 @@ export default function HomePage() {
 
           <AnimatedSection>
             <div style={{ background: '#f7f9fc', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '36px', height: '100%' }}>
-              <div style={{ fontSize: '32px', marginBottom: '14px' }}>🔭</div>
+              <div style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#eff6ff', borderRadius: '12px', marginBottom: '18px' }}>
+                <Telescope size={24} color="#1a56db" />
+              </div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '14px', letterSpacing: '-0.02em' }}>Our Vision</h3>
               <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.75 }}>
                 To be Ethiopia&apos;s most trusted technology partner, delivering world-class solutions that enable organizations to thrive in an increasingly digital world.
@@ -218,7 +222,9 @@ export default function HomePage() {
 
           <AnimatedSection direction="right">
             <div style={{ background: '#0c2d72', color: 'white', borderRadius: '16px', padding: '36px', height: '100%' }}>
-              <div style={{ fontSize: '32px', marginBottom: '14px' }}>🤝</div>
+              <div style={{ width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.15)', borderRadius: '12px', marginBottom: '18px' }}>
+                <Handshake size={24} />
+              </div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '14px', letterSpacing: '-0.02em' }}>Our Commitment</h3>
               <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.85)' }}>
                 Customer satisfaction drives everything we do. We combine deep expertise, trusted partnerships, and agile execution to deliver measurable business outcomes.

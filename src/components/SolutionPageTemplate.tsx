@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { LucideIcon, ChevronRight, ArrowRight } from 'lucide-react'
 import AnimatedSection from './AnimatedSection'
 
@@ -11,7 +12,7 @@ interface SolutionPageProps {
   intro: string
   offerings: { title: string; desc: string }[]
   benefits: string[]
-  technologies: string[]
+  technologies: (string | { src: string; alt: string })[]
   faq: FaqItem[]
 }
 
@@ -109,23 +110,36 @@ export default function SolutionPageTemplate({
       </section>
 
       {/* Technologies */}
-      <section className="section-pad-md" style={{ background: 'white', padding: '60px 24px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+      <section className="section-pad-md" style={{ background: 'white', padding: '60px 0' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
           <AnimatedSection>
             <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '24px' }}>Technologies &amp; Vendors</h2>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
-              {technologies.map((t) => (
-                <span key={t} style={{
-                  background: '#f7f9fc', border: '1px solid #e2e8f0',
-                  borderRadius: '8px', padding: '9px 16px',
-                  fontSize: '13.5px', fontWeight: 600, color: '#334155',
-                  minHeight: '40px', display: 'inline-flex', alignItems: 'center',
-                }}>
-                  {t}
-                </span>
-              ))}
-            </div>
           </AnimatedSection>
+        </div>
+        <div className="marquee-outer" style={{ padding: '8px 0 12px' }}>
+          <div className="marquee-track">
+            {[...technologies, ...technologies].map((t, i) => (
+              <div key={i} className="partner-logo-card">
+                {typeof t === 'string' ? (
+                  <span style={{
+                    fontSize: '13.5px',
+                    fontWeight: 600,
+                    color: '#334155',
+                  }}>
+                    {t}
+                  </span>
+                ) : (
+                  <Image
+                    src={t.src}
+                    alt={t.alt}
+                    width={120}
+                    height={40}
+                    style={{ maxHeight: '28px', width: 'auto', height: 'auto' }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

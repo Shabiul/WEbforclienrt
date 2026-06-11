@@ -31,7 +31,16 @@ export default function ManagedServicesPage() {
         { title: 'IT Consulting & Advisory', desc: 'Regular technology reviews, roadmap planning, and vendor management advisory from experienced IT strategists.' },
         { title: 'Cloud Managed Services', desc: 'Management and optimization of AWS, Azure, and Google Cloud environments including cost management and security posture reviews.' },
       ]}
-      technologies={['ServiceNow ITSM', 'Freshservice', 'SolarWinds', 'Zabbix', 'Microsoft Azure Monitor', 'ConnectWise', 'Veeam Cloud', 'PagerDuty']}
+      technologies={[
+        { src: '/managed services/ServiceNow_logo.svg.png', alt: 'ServiceNow ITSM' },
+        { src: '/managed services/freshservice.svg', alt: 'Freshservice' },
+        { src: '/managed services/Official_SolarWinds_Logo.svg.png', alt: 'SolarWinds' },
+        { src: '/managed services/Zabbix_logo.svg.png', alt: 'Zabbix' },
+        { src: '/managed services/Microsoft_Azure_Logo.svg.png', alt: 'Microsoft Azure Monitor' },
+        { src: '/managed services/ConnectWise_id-txRDG2s_1.svg', alt: 'ConnectWise' },
+        { src: '/managed services/Veeam_logo.svg.png', alt: 'Veeam Cloud' },
+        { src: '/managed services/pagerduty.svg', alt: 'PagerDuty' },
+      ]}
       faq={[
         { q: 'What is the difference between managed services and break-fix IT support?', a: 'Break-fix support is reactive — you call when something breaks. Managed services are proactive — we continuously monitor, maintain, and optimize your environment to prevent issues before they occur, at a predictable monthly cost.' },
         { q: 'What SLAs do Impact Technology\'s managed services include?', a: 'We offer tiered SLA packages. Our standard SLA provides 4-hour response for critical incidents, with premium packages offering 1-hour response and 24/7 on-site engineer availability depending on contract level.' },

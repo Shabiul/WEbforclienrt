@@ -31,7 +31,14 @@ export default function NetworkingPage() {
         { title: 'Network Assessment & Design', desc: 'Detailed current-state analysis and future-state network architecture design aligned to business objectives.' },
         { title: 'NOC & Network Monitoring', desc: '24/7 network operations center services with proactive fault detection, performance monitoring, and incident response.' },
       ]}
-      technologies={['Cisco Catalyst', 'Cisco Meraki', 'Cisco SD-WAN (Viptela)', 'Fortinet FortiGate', 'Aruba Networks', 'Juniper Networks', 'Palo Alto Networks', 'SolarWinds NPM']}
+      technologies={[
+        { src: '/Networking/Cisco_logo.svg.png', alt: 'Cisco' },
+        { src: '/Networking/Fortinet-Logo.wine.svg', alt: 'Fortinet FortiGate' },
+        { src: '/Networking/Aruba_Networks_logo.svg.png', alt: 'Aruba Networks' },
+        { src: '/Networking/Juniper_Networks_logo.svg.png', alt: 'Juniper Networks' },
+        { src: '/Networking/PaloAltoNetworks_2020_Logo.svg.png', alt: 'Palo Alto Networks' },
+        { src: '/Networking/Official_SolarWinds_Logo.svg.png', alt: 'SolarWinds NPM' },
+      ]}
       faq={[
         { q: 'Is Impact Technology an authorized Cisco partner in Ethiopia?', a: 'Yes. We maintain an active Cisco partnership with certified CCNA, CCNP, and CCIE engineers on our team, enabling us to supply, deploy, and support the full Cisco product portfolio.' },
         { q: 'Can you connect multiple office locations across Ethiopia via WAN?', a: 'Absolutely. We design and deploy multi-site WAN solutions using a combination of fiber, microwave, and SD-WAN technologies tailored to the connectivity landscape in Ethiopia.' },

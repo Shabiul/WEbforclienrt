@@ -31,7 +31,16 @@ export default function CybersecurityPage() {
         { title: 'Identity & Access Management', desc: 'Multi-factor authentication, privileged access management, and Active Directory hardening to control who accesses what.' },
         { title: 'Security Awareness Training', desc: 'Regular phishing simulations and employee training programs to build a human firewall across your organization.' },
       ]}
-      technologies={['Fortinet FortiGate', 'Palo Alto Networks', 'CrowdStrike Falcon', 'Microsoft Defender', 'Splunk SIEM', 'Cisco SecureX', 'Varonis', 'KnowBe4']}
+      technologies={[
+        { src: '/cybersecurity/Fortinet-Logo.wine.svg', alt: 'Fortinet FortiGate' },
+        { src: '/cybersecurity/PaloAltoNetworks_2020_Logo.svg.png', alt: 'Palo Alto Networks' },
+        { src: '/cybersecurity/crowdstrike-2.svg', alt: 'CrowdStrike Falcon' },
+        { src: '/cybersecurity/microsoft-defender.svg', alt: 'Microsoft Defender' },
+        { src: '/cybersecurity/Splunk Symbol SVG.svg', alt: 'Splunk SIEM' },
+        { src: '/Networking/Cisco_logo.svg.png', alt: 'Cisco SecureX' },
+        { src: '/cybersecurity/varonis.svg', alt: 'Varonis' },
+        { src: '/cybersecurity/knowbe4-ar21.svg', alt: 'KnowBe4' },
+      ]}
       faq={[
         { q: 'What cybersecurity threats are most common for Ethiopian enterprises?', a: 'Ethiopian organizations most frequently face phishing and social engineering attacks, ransomware targeting financial and government sectors, insider threats, and vulnerabilities in internet-facing systems. Building layered defenses addresses all these vectors.' },
         { q: 'How long does a cybersecurity audit take?', a: 'A standard security audit for a mid-size organization typically takes 2–4 weeks, covering network infrastructure, endpoint security, access controls, policies, and procedures. We provide a detailed findings report with prioritized remediation guidance.' },

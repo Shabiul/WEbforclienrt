@@ -31,7 +31,15 @@ export default function ComputingInfraPage() {
         { title: 'Infrastructure Assessment', desc: 'Detailed evaluation of existing infrastructure with performance benchmarking and upgrade roadmaps.' },
         { title: 'Migration & Modernization', desc: 'Seamless migration from legacy infrastructure to modern platforms with minimal disruption.' },
       ]}
-      technologies={['Dell PowerEdge', 'HP ProLiant', 'NVIDIA DGX', 'VMware vSphere', 'Nutanix', 'HPE Alletra', 'Dell EMC PowerStore', 'Microsoft Hyper-V']}
+      technologies={[
+        { src: '/Dell_EMC_logo.svg.png', alt: 'Dell EMC' },
+        { src: '/hp-proliant-servers.svg', alt: 'HP ProLiant' },
+        { src: '/NVIDIA_logo.svg.png', alt: 'NVIDIA DGX' },
+        { src: '/vmware.svg', alt: 'VMware vSphere' },
+        { src: '/Nutanix_Logo.svg.png', alt: 'Nutanix' },
+        { src: '/HPE-logo-full-clr-pos-rgb (3).png', alt: 'HPE Alletra' },
+        { src: '/Hyper-V_Logo.png', alt: 'Microsoft Hyper-V' },
+      ]}
       faq={[
         { q: 'What computing infrastructure brands does Impact Technology supply in Ethiopia?', a: 'We are authorized partners for Dell Technologies, HP Enterprise, and NVIDIA — providing genuine products with full manufacturer warranty and local support coverage.' },
         { q: 'Can you handle large-scale server deployments across multiple locations?', a: 'Yes. We have experience deploying computing infrastructure for large government agencies, financial institutions, and enterprises with multiple branches across Ethiopia.' },

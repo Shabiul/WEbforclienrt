@@ -31,7 +31,16 @@ export default function DataCenterPage() {
         { title: 'Power & Cooling Systems', desc: 'UPS, PDU, precision cooling, and generator integration for maximum uptime and efficiency.' },
         { title: 'Data Center Audits', desc: 'Independent assessment of existing data centers with detailed remediation plans and risk ratings.' },
       ]}
-      technologies={['VMware vSphere', 'Nutanix AHV', 'Microsoft Azure Stack', 'Dell EMC', 'Veeam Backup', 'APC by Schneider Electric', 'Vertiv', 'CommScope Cabling']}
+      technologies={[
+        { src: '/data-center-solutions/vmware.svg', alt: 'VMware vSphere' },
+        { src: '/data-center-solutions/Nutanix_Logo.svg.png', alt: 'Nutanix AHV' },
+        { src: '/data-center-solutions/Microsoft_Azure_Logo.svg.png', alt: 'Microsoft Azure Stack' },
+        { src: '/data-center-solutions/Dell_EMC_logo.svg.png', alt: 'Dell EMC' },
+        { src: '/data-center-solutions/Veeam_logo.svg.png', alt: 'Veeam Backup' },
+        { src: '/data-center-solutions/APC_by_Schneider_Electric.png', alt: 'APC by Schneider Electric' },
+        { src: '/data-center-solutions/Vertiv_logo.svg.png', alt: 'Vertiv' },
+        { src: '/data-center-solutions/Commscope-Logo.png', alt: 'CommScope Cabling' },
+      ]}
       faq={[
         { q: 'Can Impact Technology design a data center for a new building in Ethiopia?', a: 'Yes. We provide end-to-end data center consulting and design services, working alongside construction and electrical teams from the early project phases.' },
         { q: 'What standards do your data center deployments follow?', a: 'Our designs conform to TIA-942 (data center infrastructure), ISO/IEC 27001 (information security), and Uptime Institute Tier classification guidelines.' },
