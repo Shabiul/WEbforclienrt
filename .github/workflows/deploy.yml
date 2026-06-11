@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Vercel
 
 on:
   push:
@@ -6,21 +6,11 @@ on:
       - claude/kind-bardeen-bguq32
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,23 +21,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
+      - name: Build
         run: npm run build
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel@latest
+
+          # Create project named 'impact-technology' (no-op if already exists)
+          curl -s -X POST "https://api.vercel.com/v9/projects" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"impact-technology","framework":"nextjs"}' > /dev/null
+
+          # Fetch project ID
+          PROJECT_ID=$(curl -s "https://api.vercel.com/v9/projects/impact-technology" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('id',''))")
+
+          # Fetch user/org ID
+          USER_ID=$(curl -s "https://api.vercel.com/v2/user" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('user',{}).get('id',''))")
+
+          echo "Project ID: $PROJECT_ID"
+          echo "Org ID: $USER_ID"
+
+          # Link to the correct project
+          mkdir -p .vercel
+          echo "{\"projectId\":\"$PROJECT_ID\",\"orgId\":\"$USER_ID\"}" > .vercel/project.json
+
+          # Deploy to production
+          vercel deploy --prod --token=$VERCEL_TOKEN --yes
         env:
-          GITHUB_PAGES: "true"
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
