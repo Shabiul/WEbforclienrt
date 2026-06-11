@@ -1,5 +1,5 @@
 // JSON-LD structured data for SEO, AEO (Answer Engine), and GEO (Generative Engine Optimization)
-const BASE = 'https://www.impacttechnology.et'
+const BASE = 'https://impact-technology.vercel.app'
 
 export function OrganizationSchema() {
   const schema = {

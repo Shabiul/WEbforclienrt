@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.impacttechnology.et'),
+  metadataBase: new URL('https://impact-technology.vercel.app'),
   title: {
     default: "Impact Technology PLC — Empowering Ethiopia's Digital Future",
     template: '%s | Impact Technology PLC',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_ET',
-    url: 'https://www.impacttechnology.et',
+    url: 'https://impact-technology.vercel.app',
     siteName: 'Impact Technology PLC',
     title: "Impact Technology PLC — Empowering Ethiopia's Digital Future",
     description: "Ethiopia's leading IT solutions provider delivering enterprise computing, data center, networking, cybersecurity, and managed services.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: "Ethiopia's leading IT solutions provider — enterprise computing, data center, networking, cybersecurity, and managed services.",
   },
   alternates: {
-    canonical: 'https://www.impacttechnology.et',
+    canonical: 'https://impact-technology.vercel.app',
   },
 }
 
